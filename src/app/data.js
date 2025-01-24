@@ -1,0 +1,41 @@
+const  data = {
+    id:"1",
+    name:"root",
+    isFolder:true,
+    items:[
+        {
+            id:"2",
+            name:"one",
+            isFolder:true,
+            items:[
+                {
+                    id:'3',
+                    name:'first.js',
+                    isFolder:false,
+                    items:[]
+                },
+                {
+                    id:'4',
+                    name:'two',
+                    isFolder:true,
+                    items:[
+                        {
+                            id:'5',
+                            name:'Homepage.jsx',
+                            isFolder:false,
+                            items:[]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            id:"6",
+            name:'Three',
+            isFolder:true,
+            items:[]
+        }
+    ]
+}
+
+export default data;
