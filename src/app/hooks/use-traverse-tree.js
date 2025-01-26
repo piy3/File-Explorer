@@ -5,6 +5,7 @@ const useTraverseTree = ()=>{
                 id:new Date().getTime(),
                 name:item,
                 isFolder:isFolder,
+                content:"",
                 items:[]
             })
         }
@@ -14,7 +15,18 @@ const useTraverseTree = ()=>{
 
         return tree;
     }
-    return {insertNode};
+    function updateContent(tree,fileId,content){
+        if(tree.id===fileId ){
+            tree.content = content;
+            return ;
+        }
+        for(let i=0;i<tree.items.length;i++){
+            updateContent(tree.items[i],fileId,content);
+        }
+        return tree;
+    }
+
+    return {insertNode,updateContent};
 }
 
 export default useTraverseTree;

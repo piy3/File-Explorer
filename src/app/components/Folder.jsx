@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { AiFillFolderAdd, AiOutlineFileAdd } from "react-icons/ai";
 
-function Folder({ explorer, setContent ,handleInsertNode}) {
+function Folder({ explorer, setContent ,handleInsertNode,setCurrFileId}) {
   const [openFolder, setOpenFolder] = useState(false);
   const [file, setFile] = useState({
     isOpen: false,
@@ -14,12 +14,14 @@ function Folder({ explorer, setContent ,handleInsertNode}) {
   const handleFolderClick = (e) => {
     e.stopPropagation();
     setOpenFolder(!openFolder);
+    setCurrFileId(null);
   };
 
-  const handleFileClick = (e, content) => {
+  const handleFileClick = (e, content,id) => {
     e.stopPropagation();
     console.log("cnt ", content);
     setContent(content);
+    setCurrFileId(id);
   };
 
   const handleFileChange = (e, id, isfolder) => {
@@ -92,6 +94,7 @@ function Folder({ explorer, setContent ,handleInsertNode}) {
                 key={explore.id}
                 setContent={setContent}
                 handleInsertNode={handleInsertNode}
+                setCurrFileId={setCurrFileId}
               ></Folder>
             );
           })}
@@ -102,7 +105,7 @@ function Folder({ explorer, setContent ,handleInsertNode}) {
     return (
       <div
         className="pl-2 hover:bg-slate-600 hover:text-black min-w-[180px]"
-        onClick={(e) => handleFileClick(e, explorer.content)}
+        onClick={(e) => handleFileClick(e, explorer.content,explorer.id)}
       >
         📄{explorer.name}
       </div>

@@ -125,7 +125,7 @@ function JoditEditorr({ allContent, setAllContent}) {
           }
           .jodit-container {
             height: 90vh !important;
-            width: 90vw !important;
+            {/* width: 90vw !important; */}
             border: 2px solid #ccc;
             border-radius: 8px;
             display: flex !important;
