@@ -6,3 +6,5 @@ console.log('maafi mittarr');
 console.log('daya darwaza kholo');
 
 console.log('khooolo');
+
+console.log('mat holo');
