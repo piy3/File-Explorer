@@ -10,3 +10,4 @@ console.log('khooolo');
 console.log('mat holo');
 
 console.log("written by piyush")
+console;
